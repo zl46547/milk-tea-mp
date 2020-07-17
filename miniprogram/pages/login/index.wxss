@@ -1,0 +1,77 @@
+/* miniprogram/pages/login/index.wxss */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.intro {
+  flex: 1;
+  width: 100%;
+  font-size: 28rpx;
+  color: #919293;
+}
+.intro .user-info {
+  margin: 20% 0;
+}
+.intro .user-info .avatarUrl {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin: auto;
+  overflow: hidden;
+}
+.intro .user-info .avatarUrl image {
+  width: 100%;
+}
+.intro .user-info .user-nick-name {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 36rpx;
+}
+.intro .tips {
+  line-height: 62rpx;
+  font-size: 30rpx;
+  text-align: center;
+  margin-bottom: 10%;
+  font-family: "Microsoft YaHei UI";
+}
+.bottom {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 40rpx;
+}
+.bottom .login-btn {
+  width: 100%;
+  border-radius: 50rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rpx 0;
+}
+.bottom .login-btn image {
+  width: 36rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.bottom .row .grid {
+  width: 20%;
+}
+.bottom .row .grid image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 10rpx;
+}
