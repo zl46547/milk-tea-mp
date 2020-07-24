@@ -1,0 +1,38 @@
+<!--miniprogram/pages/mutiStore/index.wxml-->
+<view class="muti-store">
+    <map id="myMap"
+         longitude="{{longitude}}"
+         latitude="{{latitude}}"
+         scale="14"
+         markers="{{markers}}"
+         bindregionchange="regionChange"
+         show-location
+         style="width: 100%; height: 400rpx;"
+    />
+    <view class="store-list">
+        <view class="store-list-item" wx:for="{{multiStore}}" wx:key="id">
+            <view class="title-container">
+                <view class="title">
+                    <text>{{item.name}}</text>
+                    <text>{{item.is_open?'营业中':'休息中'}}</text>
+                </view>
+                <text class="go-to-order-btn">去下单</text>
+            </view>
+            <view class="address-container">
+                <view class="address-info">
+                    <view class="distance">{{item.distance_text}}</view>
+                    <view class="address-name">{{item.street}}</view>
+                    <view class="open-time">营业时间：{{item.server_time}}</view>
+                </view>
+                <view class="operate-btns">
+                    <view class="btn-item">
+                        <text class="iconfont icon-phone"></text>
+                    </view>
+                    <view class="btn-item">
+                        <text class="iconfont icon-location2"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

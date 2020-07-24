@@ -14,6 +14,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    getApp().globalData.name = "王二麻子";
+    getApp().globalData.favorite = "集邮";
   // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -25,7 +27,6 @@ Page({
                 ...Member,
                 ...userInfo
               }
-              console.log(member)
               getApp().globalData.member = member
               this.setData({
                 member

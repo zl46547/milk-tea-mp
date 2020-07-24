@@ -2,7 +2,7 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -66,6 +66,27 @@
 					"id": -1,
 					"name": "login",
 					"pathName": "pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "home",
+					"pathName": "pages/home/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "mutiStore",
+					"pathName": "pages/mutiStore/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "menu",
+					"pathName": "pages/menu/index",
 					"scene": null
 				}
 			]

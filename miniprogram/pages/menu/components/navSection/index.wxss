@@ -1,0 +1,101 @@
+/* pages/menu/components/navSection/index.wxss */
+.nav {
+  width: 100%;
+  height: 212rpx;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+.nav .header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  background-color: #ffffff;
+  height: 140rpx;
+}
+.nav .header .left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.nav .header .left .store-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+.nav .header .left .store-name .iconfont {
+  margin-left: 10rpx;
+  line-height: 100%;
+}
+.nav .header .left .store-location {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #919293;
+  font-size: 24rpx;
+}
+.nav .header .left .store-location .iconfont {
+  vertical-align: middle;
+  display: table-cell;
+  color: #ADB838;
+  line-height: 100%;
+}
+.nav .header .right {
+  background-color: #F5F5F5;
+  border-radius: 38rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  padding: 0 38rpx;
+  color: #919293;
+}
+.nav .header .right .dinein,
+.nav .header .right .takeout {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.nav .header .right .dinein.active,
+.nav .header .right .takeout.active {
+  padding: 14rpx 38rpx;
+  color: #ffffff;
+  background-color: #ADB838;
+  border-radius: 38rpx;
+}
+.nav .header .right .takeout {
+  margin-left: 20rpx;
+  height: 100%;
+  flex: 1;
+  padding: 14rpx 0;
+}
+.nav .header .right .dinein.active {
+  margin-left: -38rpx;
+}
+.nav .header .right .takeout.active {
+  margin-right: -38rpx;
+}
+.nav .coupon {
+  flex: 1;
+  width: 100%;
+  background-color: #E8EACF;
+  font-size: 28rpx;
+  color: #ADB838;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.nav .coupon .title {
+  flex: 1;
+  margin-left: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.nav .coupon .iconfont {
+  line-height: 100%;
+}

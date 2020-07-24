@@ -1,0 +1,233 @@
+/* miniprogram/pages/home/index.wxss */
+page {
+  height: auto;
+  min-height: 100%;
+}
+/* #endif */
+swiper {
+  height: 100%;
+}
+.banner {
+  position: relative;
+  width: 100%;
+  height: 600rpx;
+}
+.banner .bg {
+  width: 100%;
+  height: 600rpx;
+}
+.banner .intro {
+  position: absolute;
+  top: 50rpx;
+  left: 40rpx;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.banner .intro .greet {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+.banner .intro .note {
+  font-size: 24rpx;
+}
+.content {
+  padding: 0 30rpx;
+}
+.entrance {
+  position: relative;
+  margin-top: -80rpx;
+  margin-bottom: 30rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  box-shadow: 0 20rpx 20rpx -20rpx rgba(51, 51, 51, 0.1);
+  padding: 30rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.entrance .item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.entrance .item:nth-child(1):after {
+  content: '';
+  position: absolute;
+  width: 1rpx;
+  background-color: #ddd;
+  right: 0;
+  height: 100%;
+  transform: scaleX(0.5) scaleY(0.8);
+}
+.entrance .item .icon {
+  width: 84rpx;
+  height: 84rpx;
+  margin: 20rpx;
+}
+.entrance .item .title {
+  font-size: 30rpx;
+  color: #5A5B5C;
+  font-weight: 600;
+}
+.info {
+  position: relative;
+  margin-bottom: 30rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  box-shadow: 0 20rpx 20rpx -20rpx rgba(51, 51, 51, 0.1);
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info .integral_section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.info .integral_section .top {
+  display: flex;
+  align-items: center;
+}
+.info .integral_section .top .title {
+  color: #5A5B5C;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+.info .integral_section .top .value {
+  font-size: 44rpx;
+  font-weight: bold;
+}
+.info .integral_section .bottom {
+  font-size: 24rpx;
+  color: #919293;
+  display: flex;
+  align-items: center;
+}
+.info .qrcode_section {
+  color: #ADB838;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+}
+.info .qrcode_section image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: 10rpx;
+}
+.navigators {
+  width: 100%;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  box-shadow: 0 20rpx 20rpx -20rpx rgba(51, 51, 51, 0.1);
+  padding: 20rpx;
+  display: flex;
+  align-items: stretch;
+}
+.navigators .left {
+  width: 340rpx;
+  margin-right: 20rpx;
+  display: flex;
+  padding: 0 20rpx;
+  flex-direction: column;
+  font-size: 24rpx;
+  color: #5A5B5C;
+  background-color: #F2F2E6;
+}
+.navigators .left .grid {
+  height: 50%;
+  display: flex;
+}
+.navigators .right {
+  width: 290rpx;
+  display: flex;
+  flex-direction: column;
+}
+.navigators .right .tea-activity,
+.navigators .right .member-gifts {
+  width: 100%;
+  display: flex;
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: #5A5B5C;
+  align-items: center;
+  position: relative;
+}
+.navigators .right .tea-activity {
+  background-color: #FDF3F2;
+  margin-bottom: 20rpx;
+}
+.navigators .right .member-gifts {
+  background-color: #FCF6D4;
+}
+.navigators .right .right-img {
+  flex: 1;
+  position: relative;
+  margin-left: 20rpx;
+  margin-right: -20rpx;
+  margin-bottom: -20rpx;
+  display: flex;
+  align-items: flex-end;
+}
+.navigators .right .right-img image {
+  width: 100%;
+}
+.navigators .mark-img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.navigators .yzclh-img {
+  height: 122.96rpx;
+  width: 214.86rpx;
+}
+.member-news {
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+.member-news .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+.member-news .header .title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.member-news .header .iconfont {
+  font-size: 52rpx;
+  color: #919293;
+}
+.member-news .list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.member-news .list .item {
+  width: 100%;
+  height: 240rpx;
+  position: relative;
+}
+.member-news .list .item image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.member-news .list .item .title {
+  position: relative;
+  font-size: 32rpx;
+  font-weight: 500;
+  width: 100%;
+  top: -70rpx;
+  left: 16rpx;
+  color: #ffffff;
+}

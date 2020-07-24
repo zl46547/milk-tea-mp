@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "NavSection": "./components/navSection/index"
+  },
+  "navigationBarTitleText": "分类详情"
+}

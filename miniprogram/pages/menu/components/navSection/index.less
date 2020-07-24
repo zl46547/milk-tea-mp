@@ -1,0 +1,114 @@
+/* pages/menu/components/navSection/index.wxss */
+@import "../../../../static/style/uni.less";
+.nav {
+  width: 100%;
+  height: 212rpx;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20rpx;
+    background-color: #ffffff;
+    height: 140rpx;
+
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      .store-name {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: @font-size-lg;
+        margin-bottom: 10rpx;
+
+        .iconfont {
+          margin-left: 10rpx;
+          line-height: 100%;
+        }
+      }
+
+      .store-location {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: @text-color-assist;
+        font-size: @font-size-sm;
+
+        .iconfont {
+          vertical-align: middle;
+          display: table-cell;
+          color: @color-primary;
+          line-height: 100%;
+        }
+      }
+    }
+
+    .right {
+      background-color: @bg-color-grey;
+      border-radius: 38rpx;
+      display: flex;
+      align-items: center;
+      font-size: @font-size-sm;
+      padding: 0 38rpx;
+      color: @text-color-assist;
+
+      .dinein, .takeout {
+        position: relative;
+        display: flex;
+        align-items: center;
+        &.active {
+          padding: 14rpx 38rpx;
+          color: #ffffff;
+          background-color: @color-primary;
+          border-radius: 38rpx;
+        }
+      }
+
+      .takeout {
+        margin-left: 20rpx;
+        height: 100%;
+        flex: 1;
+        padding: 14rpx 0;
+      }
+
+      .dinein.active {
+        margin-left: -38rpx;
+      }
+
+      .takeout.active {
+        margin-right: -38rpx;
+      }
+    }
+  }
+
+  .coupon {
+    flex: 1;
+    width: 100%;
+    background-color: @bg-color-primary;
+    font-size: @font-size-base;
+    color: @color-primary;
+    padding: 0 20rpx;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    .title {
+      flex: 1;
+      margin-left: 10rpx;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .iconfont {
+      line-height: 100%;
+    }
+  }
+}

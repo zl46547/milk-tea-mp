@@ -1,0 +1,72 @@
+/* miniprogram/pages/mutiStore/index.wxss */
+.store-list{
+  background-color: #eeeeee;
+  padding: 20rpx;
+  .store-list-item{
+    padding: 30rpx 20rpx;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+    .title-container{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .title{
+        display: flex;
+        text{
+          &:nth-of-type(1){
+            font-size: 38rpx;
+            font-weight: bold;
+          }
+          &:nth-of-type(2){
+            margin-left: 20rpx;
+            font-size: 24rpx;
+            display: inline-block;
+            padding: 10rpx;
+            border-radius: 2rpx;
+            color: #a9b910;
+            border:1rpx solid #a9b910;
+          }
+        }
+      }
+      .go-to-order-btn{
+        color: #a9b910;
+        font-size: 30rpx;
+        font-weight: bold;
+      }
+    }
+    .address-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .address-info{
+        max-width: 65%;
+        font-size: 24rpx;
+        color: #858585;
+        >view{
+          line-height: 1.6;
+        }
+      }
+      .operate-btns{
+        display: flex;
+        .btn-item{
+          width: 70rpx;
+          height: 70rpx;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 70rpx;
+          color: #a9b910;
+          background-color: #e8ecc3;
+          &:nth-of-type(2){
+            margin-left: 30rpx;
+          }
+          .iconfont{
+            font-size: 32rpx;
+          }
+        }
+      }
+    }
+  }
+}
