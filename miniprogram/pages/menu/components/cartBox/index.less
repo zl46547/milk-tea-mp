@@ -1,0 +1,62 @@
+/* pages/menu/components/cartBox/index.wxss */
+@import "../../../../static/style/uni";
+.cart-box {
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+  right: 30rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+
+  .cart-img {
+    width: 96rpx;
+    height: 96rpx;
+    position: relative;
+    margin-top: -48rpx;
+  }
+
+  .pay-btn {
+    height: 100%;
+    padding: 0 30rpx;
+    color: #FFFFFF;
+    border-radius: 0 50rpx 50rpx 0;
+    display: flex;
+    align-items: center;
+    font-size: @font-size-base;
+    background-color: @color-primary;
+  }
+
+  .mark {
+    padding-left: 46rpx;
+    margin-right: 30rpx;
+    position: relative;
+
+    .tag {
+      background-color: @color-warning;
+      color: @text-color-white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: @font-size-sm;
+      position: absolute;
+      right: -10rpx;
+      top: -50rpx;
+      border-radius: 100%;
+      padding: 4rpx;
+      width: 40rpx;
+      height: 40rpx;
+      opacity: .9;
+    }
+  }
+
+  .price {
+    flex: 1;
+    color: @text-color-base;
+  }
+}

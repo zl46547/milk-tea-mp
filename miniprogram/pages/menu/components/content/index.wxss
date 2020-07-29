@@ -1,0 +1,176 @@
+/* pages/menu/components/content/index.wxss */
+.content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.content-container .menus {
+  width: 200rpx;
+  height: 100%;
+  overflow: hidden;
+  background-color: #F5F5F5;
+}
+.content-container .menus .wrapper {
+  width: 100%;
+  height: 100%;
+}
+.content-container .menus .wrapper .menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30rpx 20rpx;
+  font-size: 26rpx;
+  color: #919293;
+  position: relative;
+}
+.content-container .menus .wrapper .menu:nth-last-child(1) {
+  margin-bottom: 130rpx;
+}
+.content-container .menus .wrapper .menu.current {
+  background-color: #ffffff;
+  color: #5A5B5C;
+}
+.content-container .menus .wrapper .menu .dot {
+  position: absolute;
+  width: 34rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 22rpx;
+  background-color: #ADB838;
+  color: #ffffff;
+  top: 16rpx;
+  right: 10rpx;
+  border-radius: 100%;
+  text-align: center;
+}
+.content-container .goods {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.content-container .goods .wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20rpx;
+}
+.content-container .goods .wrapper .ads {
+  height: calc(300 / 550 * 510rpx);
+}
+.content-container .goods .wrapper .ads image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.content-container .goods .wrapper .list {
+  width: 100%;
+  font-size: 28rpx;
+  padding-bottom: 130rpx;
+}
+.content-container .goods .wrapper .list .category {
+  width: 100%;
+}
+.content-container .goods .wrapper .list .category .title {
+  padding: 30rpx 0;
+  display: flex;
+  align-items: center;
+  color: #5A5B5C;
+}
+.content-container .goods .wrapper .list .category .title .icon {
+  width: 38rpx;
+  height: 38rpx;
+  margin-left: 10rpx;
+}
+.content-container .goods .wrapper .list .items {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: -30rpx;
+}
+.content-container .goods .wrapper .list .items .good {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.content-container .goods .wrapper .list .items .good .image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+  border-radius: 8rpx;
+}
+.content-container .goods .wrapper .list .items .good .right {
+  flex: 1;
+  height: 160rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-right: 14rpx;
+}
+.content-container .goods .wrapper .list .items .good .right .name {
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+.content-container .goods .wrapper .list .items .good .right .tips {
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 24rpx;
+  color: #919293;
+  margin-bottom: 10rpx;
+}
+.content-container .goods .wrapper .list .items .good .right .price_and_action {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-container .goods .wrapper .list .items .good .right .price_and_action .price {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.content-container .goods .wrapper .list .items .good .right .price_and_action .btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.content-container .goods .wrapper .list .items .good .right .price_and_action .btn-group .btn {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+}
+.content-container .goods .wrapper .list .items .good .right .price_and_action .btn-group .btn.property_btn {
+  border-radius: 24rpx;
+}
+.content-container .goods .wrapper .list .items .good .right .price_and_action .btn-group .btn.add_btn,
+.content-container .goods .wrapper .list .items .good .right .price_and_action .btn-group .btn.reduce_btn {
+  padding: 0;
+  width: 44rpx;
+  border-radius: 44rpx;
+}
+.content-container .goods .wrapper .list .items .good .right .price_and_action .btn-group .dot {
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #ADB838;
+  color: #ADB838;
+  font-size: 24rpx;
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  border-radius: 100%;
+  right: -12rpx;
+  top: -10rpx;
+}
+.content-container .goods .wrapper .list .items .good .right .price_and_action .btn-group .number {
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+}

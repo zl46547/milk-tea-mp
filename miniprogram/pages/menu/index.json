@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "NavSection": "./components/navSection/index"
+    "NavSection": "./components/navSection/index",
+    "Content": "./components/content/index",
+    "ProductModal": "./components/productModal/index",
+    "CartBox": "./components/cartBox/index"
   },
   "navigationBarTitleText": "分类详情"
 }

@@ -1,0 +1,102 @@
+<!--pages/menu/components/content/index.wxml-->
+<view class="content-container">
+    <scroll-view class="menus" :scroll-into-view="menuScrollIntoView" scroll-with-animation scroll-y>
+        <view class="wrapper">
+            <view class="{{item.id === currentCateId?'menu current':'menu'}}"
+                  wx:for="{{goods}}"
+                  id="menu-{{item.id}}"
+                  bind:tap="handleMenuTap"
+                  data-id="{{item.id}}"
+            >
+                <text>{{ item.name }}</text>
+                <view class="dot" wx:if="{{item.cartNum}}">{{ item.cartNum }}</view>
+            </view>
+        </view>
+    </scroll-view>
+    <!-- goods list begin -->
+    <scroll-view class="goods"
+                 scroll-with-animation
+                 scroll-y
+                 scroll-top="{{cateScrollTop}}"
+                 bind:scroll="handleGoodsScroll"
+    >
+        <view class="wrapper">
+            <swiper class="ads" id="ads" autoplay interval="3000" indicator-dots>
+                <swiper-item wx:for="{{advImages}}">
+                    <image src="{{item.image}}"></image>
+                </swiper-item>
+            </swiper>
+            <view class="list">
+                <!-- category begin -->
+                <view class="category" wx:for="{{goods}}" id="cate-{{item.id}}">
+                    <view class="title">
+                        <text>{{ item.name }}</text>
+                        <image src="{{item.icon}}" class="icon"></image>
+                    </view>
+                    <view class="items">
+                        <!-- 商品 begin -->
+                        <view class="good"
+                              wx:for="{{item.goods_list}}"
+                              wx:key="{{good.id}}"
+                              wx:for-item="good"
+                              data-good="{{good}}"
+                              data-cateId="{{item.id}}"
+                              bind:tap="showGoodDetailModal"
+                        >
+                            <image src="{{good.images}}"
+                                   class="image"
+                                   data-item="{{item}}"
+                                   data-good="{{good}}"
+                            ></image>
+                            <view class="right">
+                                <text class="name">{{ good.name }}</text>
+                                <text class="tips">{{ good.content }}</text>
+                                <view class="price_and_action">
+                                    <text class="price">￥{{ good.price }}</text>
+                                    <view class="btn-group" wx:if="{{good.use_property}}">
+                                        <button type="primary"
+                                                class="btn property_btn"
+                                                hover-class="none"
+                                                size="mini"
+                                                data-item="{{item}}"
+                                                data-good="{{good}}">
+                                            选规格
+                                        </button>
+                                        <view class="dot" wx:if="{{goodCartNum>0}}">{{ goodCartNum }}</view>
+                                    </view>
+                                    <view class="btn-group" wx:else>
+                                        <button type="default"
+                                                wx:if="{{goodCartNum}}"
+                                                plain
+                                                class="btn reduce_btn"
+                                                size="mini"
+                                                hover-class="none"
+                                                data-item="{{item}}"
+                                                data-good="{{good}}"
+                                                bind:tap="handleReduceFromCart">
+                                            <view class="iconfont iconsami-select"></view>
+                                        </button>
+                                        <view class="number" wx:if="{{goodCartNum}}">{{ goodCartNum }}
+                                        </view>
+                                        <button type="primary"
+                                                class="btn add_btn"
+                                                size="min"
+                                                hover-class="none"
+                                                data-item="{{item}}"
+                                                data-good="{{good}}"
+                                                bind:tap="handleAddToCart">
+                                            <view class="iconfont iconadd-select"></view>
+                                        </button>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <!-- 商品 end -->
+                    </view>
+                </view>
+                <!-- category end -->
+            </view>
+        </view>
+    </scroll-view>
+    <!-- goods list end -->
+</view>

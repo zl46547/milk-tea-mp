@@ -11,7 +11,6 @@
 						<view class="store-location">
 							<image src='/static/images/order/location.png' style="width: 30rpx; height: 30rpx;" class="mr-10"></image>
 							<text>距离您 {{ store.distance_text }}</text>
-						</view>
 					</view>
 					<view class="left overflow-hidden" v-else>
 						<view class="d-flex align-items-center overflow-hidden">
@@ -359,7 +358,7 @@ export default {
 			})
 			this.sizeCalcState = true
 		},
-		handleAddToCart(cate, good, num) {	//添加到购物车
+		handleAddToCart(cate, good, num = 1) {	//添加到购物车
 			const index = this.cart.findIndex(item => {
 				if(good.use_property) {
 					return (item.id === good.id) && (item.props_text === good.props_text)

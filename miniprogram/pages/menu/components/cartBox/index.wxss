@@ -1,0 +1,56 @@
+/* pages/menu/components/cartBox/index.wxss */
+.cart-box {
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+  right: 30rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+}
+.cart-box .cart-img {
+  width: 96rpx;
+  height: 96rpx;
+  position: relative;
+  margin-top: -48rpx;
+}
+.cart-box .pay-btn {
+  height: 100%;
+  padding: 0 30rpx;
+  color: #FFFFFF;
+  border-radius: 0 50rpx 50rpx 0;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  background-color: #ADB838;
+}
+.cart-box .mark {
+  padding-left: 46rpx;
+  margin-right: 30rpx;
+  position: relative;
+}
+.cart-box .mark .tag {
+  background-color: #FAB714;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -50rpx;
+  border-radius: 100%;
+  padding: 4rpx;
+  width: 40rpx;
+  height: 40rpx;
+  opacity: 0.9;
+}
+.cart-box .price {
+  flex: 1;
+  color: #5A5B5C;
+}

@@ -16,7 +16,7 @@
                     <text>{{item.name}}</text>
                     <text>{{item.is_open?'营业中':'休息中'}}</text>
                 </view>
-                <text class="go-to-order-btn">去下单</text>
+                <text class="go-to-order-btn" bind:tap="toOrder" data-store="{{item}}" data-orderType="takein">去下单</text>
             </view>
             <view class="address-container">
                 <view class="address-info">

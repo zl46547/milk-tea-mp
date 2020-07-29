@@ -1,144 +1,27 @@
 <!--miniprogram/pages/menu/index.wxml-->
 <view class="container" wx:if="!loading">
     <view class="main" wx:if="goods.length">
-        <NavSection/>
-<!--        <view class="content">-->
-<!--            <scroll-view class="menus" :scroll-into-view="menuScrollIntoView" scroll-with-animation scroll-y>-->
-<!--                <view class="wrapper">-->
-<!--                    <view class="menu" :id="`menu-${item.id}`" :class="{'current': item.id === currentCateId}" wx:for="(item, index) in goods"-->
-<!--                          :key="index" bind:tap="handleMenuTap(item.id)">-->
-<!--                        <text>{{ item.name }}</text>-->
-<!--                        <view class="dot" wx:show="menuCartNum(item.id)">{{ menuCartNum(item.id) }}</view>-->
-<!--                    </view>-->
-<!--                </view>-->
-<!--            </scroll-view>-->
-<!--            &lt;!&ndash; goods list begin &ndash;&gt;-->
-<!--            <scroll-view class="goods" scroll-with-animation scroll-y :scroll-top="cateScrollTop" bind:scroll="handleGoodsScroll">-->
-<!--                <view class="wrapper">-->
-<!--                    <swiper class="ads" id="ads" autoplay :interval="3000" indicator-dots>-->
-<!--                        <swiper-item wx:for="(item, index) in ads" :key='index'>-->
-<!--                            <image :src="item.image"></image>-->
-<!--                        </swiper-item>-->
-<!--                    </swiper>-->
-<!--                    <view class="list">-->
-<!--                        &lt;!&ndash; category begin &ndash;&gt;-->
-<!--                        <view class="category" wx:for="(item, index) in goods" :key="index" :id="`cate-${item.id}`">-->
-<!--                            <view class="title">-->
-<!--                                <text>{{ item.name }}</text>-->
-<!--                                <image :src="item.icon" class="icon"></image>-->
-<!--                            </view>-->
-<!--                            <view class="items">-->
-<!--                                &lt;!&ndash; 商品 begin &ndash;&gt;-->
-<!--                                <view class="good" wx:for="(good, key) in item.goods_list" :key="key">-->
-<!--                                    <image :src="good.images" class="image" bind:tap="showGoodDetailModal(item, good)"></image>-->
-<!--                                    <view class="right">-->
-<!--                                        <text class="name">{{ good.name }}</text>-->
-<!--                                        <text class="tips">{{ good.content }}</text>-->
-<!--                                        <view class="price_and_action">-->
-<!--                                            <text class="price">￥{{ good.price }}</text>-->
-<!--                                            <view class="btn-group" wx:if="good.use_property">-->
-<!--                                                <button type="primary" class="btn property_btn" hover-class="none"-->
-<!--                                                        size="mini" bind:tap="showGoodDetailModal(item, good)">-->
-<!--                                                    选规格-->
-<!--                                                </button>-->
-<!--                                                <view class="dot" wx:show="goodCartNum(good.id)">{{ goodCartNum(good.id) }}</view>-->
-<!--                                            </view>-->
-<!--                                            <view class="btn-group" wx:else>-->
-<!--                                                <button type="default" wx:show="goodCartNum(good.id)" plain class="btn reduce_btn"-->
-<!--                                                        size="mini" hover-class="none" bind:tap="handleReduceFromCart(item, good)">-->
-<!--                                                    <view class="iconfont iconsami-select"></view>-->
-<!--                                                </button>-->
-<!--                                                <view class="number" wx:show="goodCartNum(good.id)">{{ goodCartNum(good.id) }}</view>-->
-<!--                                                <button type="primary" class="btn add_btn" size="min" hover-class="none"-->
-<!--                                                        bind:tap="handleAddToCart(item, good, 1)">-->
-<!--                                                    <view class="iconfont iconadd-select"></view>-->
-<!--                                                </button>-->
-<!--                                            </view>-->
-<!--                                        </view>-->
-<!--                                    </view>-->
-<!--                                </view>-->
-<!--                                &lt;!&ndash; 商品 end &ndash;&gt;-->
-<!--                            </view>-->
-<!--                        </view>-->
-<!--                        &lt;!&ndash; category end &ndash;&gt;-->
-<!--                    </view>-->
-<!--                </view>-->
-<!--            </scroll-view>-->
-<!--            &lt;!&ndash; goods list end &ndash;&gt;-->
-<!--        </view>-->
+        <NavSection orderType="{{orderType}}"/>
+        <div class="content-wrap">
+            <Content bind:showModal="showGoodDetailModal" cart="{{cart}}"/>
+        </div>
+<!--        -->
         <!-- content end -->
         <!-- 购物车栏 begin -->
-        <view class="cart-box" wx:if="cart.length > 0">
-            <view class="mark">
-                <image src="/static/images/menu/cart.png" class="cart-img" bind:tap="openCartPopup"></image>
-                <view class="tag">{{ getCartGoodsNumber }}</view>
-            </view>
-            <view class="price">￥{{ getCartGoodsPrice }}</view>
-            <button type="primary" class="pay-btn" bind:tap="toPay" wx:if="!disabledPay">
-                去结算
-            </button>
-            <button type="primary" class="pay-btn" bind:tap="toPay" disabled="{{disabledPay}}" wx:else>
-                差{{spread}}元起送
-            </button>
-        </view>
+        <CartBox cart="{{cart}}"
+                 goodDetailModalVisible="{{goodDetailModalVisible}}"
+                 orderType="{{orderType}}"
+        />
         <!-- 购物车栏 end -->
     </view>
     <!-- 商品详情模态框 begin -->
-<!--    <modal wx:if="goodDetailModalVisible" class="good-detail-modal" color="#5A5B5C"-->
-<!--           width="90%" custom padding="0rpx" radius="12rpx">-->
-<!--        <view class="cover">-->
-<!--            <image wx:if="good.images" :src="good.images" class="image"></image>-->
-<!--            <view class="btn-group">-->
-<!--                <image src="/static/images/menu/share-good.png"></image>-->
-<!--                <image src="/static/images/menu/close.png" bind:tap="closeGoodDetailModal"></image>-->
-<!--            </view>-->
-<!--        </view>-->
-<!--        <scroll-view class="detail" scroll-y>-->
-<!--            <view class="wrapper">-->
-<!--                <view class="basic">-->
-<!--                    <view class="name">{{ good.name }}</view>-->
-<!--                    <view class="tips">{{ good.content }}</view>-->
-<!--                </view>-->
-<!--                <view class="properties" wx:if="good.use_property">-->
-<!--                    <view class="property" wx:for="(item, index) in good.property" :key="index">-->
-<!--                        <view class="title">-->
-<!--                            <text class="name">{{ item.name }}</text>-->
-<!--                            <view class="desc" wx:if="item.desc">({{ item.desc }})</view>-->
-<!--                        </view>-->
-<!--                        <view class="values">-->
-<!--                            <view class="value" wx:for="(value, key) in item.values" :key="key"-->
-<!--                                  :class="{'default': value.is_default}"-->
-<!--                                  bind:tap="changePropertyDefault(index, key)">-->
-<!--                                {{ value.value }}-->
-<!--                            </view>-->
-<!--                        </view>-->
-<!--                    </view>-->
-<!--                </view>-->
-<!--            </view>-->
-<!--        </scroll-view>-->
-<!--        <view class="action">-->
-<!--            <view class="left">-->
-<!--                <view class="price">￥{{ good.price }}</view>-->
-<!--                <view class="props" wx:if="getGoodSelectedProps(good)">-->
-<!--                    {{ getGoodSelectedProps(good) }}-->
-<!--                </view>-->
-<!--            </view>-->
-<!--            <view class="btn-group">-->
-<!--                <button type="default" plain class="btn" size="mini" hover-class="none"-->
-<!--                        bind:tap="handlePropertyReduce">-->
-<!--                    <view class="iconfont iconsami-select"></view>-->
-<!--                </button>-->
-<!--                <view class="number">{{ good.number }}</view>-->
-<!--                <button type="primary" class="btn" size="min" hover-class="none"-->
-<!--                        bind:tap="handlePropertyAdd">-->
-<!--                    <view class="iconfont iconadd-select"></view>-->
-<!--                </button>-->
-<!--            </view>-->
-<!--        </view>-->
-<!--        <view class="add-to-cart-btn" bind:tap="handleAddToCartInModal">-->
-<!--            <view>加入购物车</view>-->
-<!--        </view>-->
-<!--    </modal>-->
+    <ProductModal goodDetailModalVisible="{{goodDetailModalVisible}}"
+                  good="{{activeGood}}"
+                  bind:closeModal="closeGoodDetailModal"
+                  bind:changePropertyDefault="changeGood"
+                  bind:changeGoodNum="changeGood"
+                  bind:addToCart="handleAddToCart"
+    />
     <!-- 商品详情模态框 end -->
     <!-- 购物车详情popup -->
     <popup-layer direction="top" :show-pop="cartPopupVisible" class="cart-popup">

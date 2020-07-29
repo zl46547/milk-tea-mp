@@ -1,0 +1,14 @@
+<!--pages/menu/components/cartBox/index.wxml-->
+<view class="cart-box" wx:if="{{cart.length > 0 && !goodDetailModalVisible}}">
+    <view class="mark">
+        <image src="/static/images/menu/cart.png" class="cart-img" bind:tap="openCartPopup"></image>
+        <view class="tag">{{ goodsNumber }}</view>
+    </view>
+    <view class="price">￥{{ goodsPrice }}</view>
+    <view  class="pay-btn" bind:tap="toPay" wx:if="{{payStatus}}">
+        去结算
+    </view>
+    <view type="primary" class="pay-btn" bind:tap="toPay" disabled="{{!payStatus}}" wx:else>
+        差{{spread}}元起送
+    </view>
+</view>

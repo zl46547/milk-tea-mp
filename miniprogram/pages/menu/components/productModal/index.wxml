@@ -1,0 +1,67 @@
+<!--pages/menu/components/productModal/index.wxml-->
+<view class="mask" wx:if="{{goodDetailModalVisible}}">
+    <view class="good-detail-modal">
+        <view class="cover">
+            <image wx:if="{{good.images}}" src="{{good.images}}" class="image"></image>
+            <view class="btn-group">
+                <image src="/static/images/menu/share-good.png"></image>
+                <image src="/static/images/menu/close.png"
+                       bind:tap="closeGoodDetailModal"
+                ></image>
+            </view>
+        </view>
+        <scroll-view class="detail" scroll-y>
+            <view class="wrapper">
+                <view class="basic">
+                    <view class="name">{{ good.name }}</view>
+                    <view class="tips">{{ good.content }}</view>
+                </view>
+                <view class="properties" wx:if="{{good.use_property}}">
+                    <view class="property" wx:for="{{good.property}}">
+                        <view class="title">
+                            <text class="name">{{ item.name }}</text>
+                            <view class="desc" wx:if="{{item.desc}}">({{ item.desc }})</view>
+                        </view>
+                        <view class="values">
+                            <view class="value"
+                                  wx:for="{{item.values}}"
+                                  wx:key="{{value.id}}"
+                                  wx:for-item="value"
+                                  wx:for-index="idx"
+                                  data-id="{{value.id}}"
+                                  data-index="{{index}}"
+                                  class="{{value.is_default?'value default':'value'}}}"
+                                  bind:tap="changePropertyDefault">
+                                {{ value.value }}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="action">
+            <view class="left">
+                <view class="price">￥{{ good.price }}</view>
+                <view class="props" wx:if="{{goodSelected}}">
+                    {{ goodSelected}}
+                </view>
+            </view>
+            <view class="btn-group">
+                <view class="btn icon-btn"
+                      bind:tap="handlePropertyReduce"
+                >
+                    <text class="iconfont icon-subtract"></text>
+                </view>
+                <view class="number">{{ good.number }}</view>
+                <view class="btn add-btn"
+                      bind:tap="handlePropertyAdd"
+                >
+                    <text class="iconfont icon-add"></text>
+                </view>
+            </view>
+        </view>
+        <view class="add-to-cart-btn" bind:tap="handleAddToCartInModal">
+            <view>加入购物车</view>
+        </view>
+    </view>
+</view>

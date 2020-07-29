@@ -1,0 +1,205 @@
+/* pages/menu/components/content/index.wxss */
+@import "../../../../static/style/uni.less";
+.content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  .menus {
+    width: 200rpx;
+    height: 100%;
+    overflow: hidden;
+    background-color: @bg-color-grey;
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+
+      .menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 30rpx 20rpx;
+        font-size: 26rpx;
+        color: @text-color-assist;
+        position: relative;
+
+        &:nth-last-child(1) {
+          margin-bottom: 130rpx;
+        }
+
+        &.current {
+          background-color: #ffffff;
+          color: @text-color-base;
+        }
+
+        .dot {
+          position: absolute;
+          width: 34rpx;
+          height: 34rpx;
+          line-height: 34rpx;
+          font-size: 22rpx;
+          background-color: @color-primary;
+          color: #ffffff;
+          top: 16rpx;
+          right: 10rpx;
+          border-radius: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .goods {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      padding: 20rpx;
+
+      .ads {
+        height: calc(300 / 550 * 510rpx);
+
+        image {
+          width: 100%;
+          height: 100%;
+          border-radius: 8rpx;
+        }
+      }
+
+      .list {
+        width: 100%;
+        font-size: @font-size-base;
+        padding-bottom: 130rpx;
+
+        .category {
+          width: 100%;
+
+          .title {
+            padding: 30rpx 0;
+            display: flex;
+            align-items: center;
+            color: @text-color-base;
+
+            .icon {
+              width: 38rpx;
+              height: 38rpx;
+              margin-left: 10rpx;
+            }
+          }
+        }
+
+        .items {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: -30rpx;
+
+          .good {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30rpx;
+
+            .image {
+              width: 160rpx;
+              height: 160rpx;
+              margin-right: 20rpx;
+              border-radius: 8rpx;
+            }
+
+            .right {
+              flex: 1;
+              height: 160rpx;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: space-between;
+              padding-right: 14rpx;
+
+              .name {
+                font-size: @font-size-base;
+                margin-bottom: 10rpx;
+              }
+
+              .tips {
+                width: 100%;
+                height: 40rpx;
+                line-height: 40rpx;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: @font-size-sm;
+                color: @text-color-assist;
+                margin-bottom: 10rpx;
+              }
+
+              .price_and_action {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .price {
+                  font-size: @font-size-base;
+                  font-weight: 600;
+                }
+
+                .btn-group {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  position: relative;
+
+                  .btn {
+                    padding: 0 20rpx;
+                    box-sizing: border-box;
+                    font-size: @font-size-sm;
+                    height: 44rpx;
+                    line-height: 44rpx;
+
+                    &.property_btn {
+                      border-radius: 24rpx;
+                    }
+
+                    &.add_btn,
+                    &.reduce_btn {
+                      padding: 0;
+                      width: 44rpx;
+                      border-radius: 44rpx;
+                    }
+                  }
+
+                  .dot {
+                    position: absolute;
+                    background-color: #ffffff;
+                    border: 1px solid @color-primary;
+                    color: @color-primary;
+                    font-size: @font-size-sm;
+                    width: 36rpx;
+                    height: 36rpx;
+                    line-height: 36rpx;
+                    text-align: center;
+                    border-radius: 100%;
+                    right: -12rpx;
+                    top: -10rpx;
+                  }
+
+                  .number {
+                    width: 44rpx;
+                    height: 44rpx;
+                    line-height: 44rpx;
+                    text-align: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

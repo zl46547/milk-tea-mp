@@ -23,10 +23,10 @@
             </view>
         </view>
         <view class="right">
-            <view class="dinein" :class="{active: orderType == 'takein'}" bind:tap="SET_ORDER_TYPE('takein')">
+            <view class="{{orderType == 'takein' ? 'dinein active': 'dinein' }}" bind:tap="SET_ORDER_TYPE('takein')">
                 <text>自取</text>
             </view>
-            <view class="takeout" :class="{active: orderType == 'takeout'}" bind:tap="takout">
+            <view class="{{orderType == 'takeout' ? 'takeout active': 'takeout'}}" bind:tap="takout">
                 <text>外卖</text>
             </view>
         </view>
