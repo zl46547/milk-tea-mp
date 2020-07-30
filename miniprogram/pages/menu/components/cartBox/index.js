@@ -82,6 +82,9 @@ Component({
       this.setData({
         spread
       });
+    },
+    openCartPopup () {
+      this.triggerEvent('openCart');
     }
   }
 });

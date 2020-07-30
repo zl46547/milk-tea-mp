@@ -1,0 +1,102 @@
+/* pages/menu/components/cartPopup/index.wxss */
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.mask .cart-popup {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12 rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+.mask .cart-popup .top {
+  background-color: #E8EACF;
+  color: #ADB838;
+  padding: 10rpx 30rpx;
+  font-size: 24rpx;
+  text-align: right;
+}
+.mask .cart-popup .cart-list {
+  background-color: #FFFFFF;
+  width: 100%;
+  overflow: hidden;
+  min-height: 1vh;
+  max-height: 60vh;
+}
+.mask .cart-popup .cart-list .wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 30rpx;
+  margin-bottom: 156rpx;
+}
+.mask .cart-popup .cart-list .wrapper .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  position: relative;
+}
+.mask .cart-popup .cart-list .wrapper .item::after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #e2e2e2;
+  height: 2rpx;
+  transform: scaleY(0.6);
+}
+.mask .cart-popup .cart-list .wrapper .item .left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-right: 30rpx;
+}
+.mask .cart-popup .cart-list .wrapper .item .left .name {
+  font-size: 24rpx;
+  color: #5A5B5C;
+}
+.mask .cart-popup .cart-list .wrapper .item .left .props {
+  color: #919293;
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mask .cart-popup .cart-list .wrapper .item .center {
+  margin-right: 120rpx;
+  font-size: 28rpx;
+}
+.mask .cart-popup .cart-list .wrapper .item .right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mask .cart-popup .cart-list .wrapper .item .right .btn {
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 100%;
+  padding: 0;
+  text-align: center;
+  line-height: 46rpx;
+}
+.mask .cart-popup .cart-list .wrapper .item .right .number {
+  font-size: 28rpx;
+  width: 46rpx;
+  height: 46rpx;
+  text-align: center;
+  line-height: 46rpx;
+}

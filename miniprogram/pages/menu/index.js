@@ -9,23 +9,16 @@ Page({
     goodDetailModalVisible: false, // 是否饮品详情模态框
     activeGood: {},  // 当前点击的商品
     cart: [],  // 购物车列表
-
+    cartPopupVisible: false, // 购物车弹框
 
     goods: [], // 所有商品
-    ads: [
-      {image: 'https://img-shop.qmimg.cn/s23107/2020/04/27/4ebdb582a5185358c4.jpg?imageView2/2/w/600/h/600'},
-      {image: 'https://images.qmai.cn/s23107/2020/05/08/c25de6ef72d2890630.png?imageView2/2/w/600/h/600'},
-      {image: 'https://img-shop.qmimg.cn/s23107/2020/04/10/add546c1b1561f880d.jpg?imageView2/2/w/600/h/600'},
-      {image: 'https://images.qmai.cn/s23107/2020/04/30/b3af19e0de8ed42f61.jpg?imageView2/2/w/600/h/600'},
-      {image: 'https://img-shop.qmimg.cn/s23107/2020/04/17/8aeb78516d63864420.jpg?imageView2/2/w/600/h/600'}
-    ],
+
     loading: true,
     currentCateId: 6905, // 默认分类
     cateScrollTop: 0,
     menuScrollIntoView: '',
     good: {}, // 当前饮品
     category: {}, // 当前饮品所在分类
-    cartPopupVisible: false,
     sizeCalcState: false
   },
 
@@ -85,6 +78,24 @@ Page({
     });
   },
 
+  /**
+   * 打开购物车弹框
+   */
+  openCartPopup () {	// 打开/关闭购物车列表popup
+    this.setData({
+      cartPopupVisible: true
+    });
+  },
+
+  /**
+   * 清空购物车
+   */
+  clearCart () {
+    this.setData({
+      cartPopupVisible: false,
+      cart: []
+    });
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -197,9 +208,6 @@ Page({
     const product = Object.assign({}, this.data.good, {props_text: this.getGoodSelectedProps(this.good), props: this.getGoodSelectedProps(this.good, 'id')});
     this.handleAddToCart(this.data.category, product, this.good.number);
     this.closeGoodDetailModal();
-  },
-  openCartPopup () {	// 打开/关闭购物车列表popup
-    this.data.cartPopupVisible = !this.data.cartPopupVisible;
   },
   handleCartClear () {	// 清空购物车
     wx.showModal({

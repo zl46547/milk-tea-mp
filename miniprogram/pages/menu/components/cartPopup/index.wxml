@@ -1,0 +1,49 @@
+<!--pages/menu/components/cartPopup/index.wxml-->
+<view class="mask" wx:if="{{cartPopupVisible}}">
+    <view class="cart-popup">
+        <view class="top">
+            <text bind:tap="handleCartClear">清空</text>
+        </view>
+        <scroll-view class="cart-list" scroll-y>
+            <view class="wrapper">
+                <view class="item" wx:for="{{cart}}">
+                    <view class="left">
+                        <view class="name">{{ item.name }}</view>
+                        <view class="props">{{ item.props_text }}</view>
+                    </view>
+                    <view class="center">
+                        <text>￥{{ item.price }}</text>
+                    </view>
+                    <view class="right">
+                        <button type="default" plain size="mini" class="btn" hover-class="none"
+                                bind:tap="handleCartItemReduce(index)">
+                            <view class="iconfont iconsami-select"></view>
+                        </button>
+                        <view class="number">{{ item.number }}</view>
+                        <button type="primary" class="btn" size="min" hover-class="none"
+                                bind:tap="handleCartItemAdd(index)">
+                            <view class="iconfont iconadd-select"></view>
+                        </button>
+                    </view>
+                </view>
+                <view class="item" wx:if="orderType == 'takeout' && store.packing_fee">
+                    <view class="left">
+                        <view class="name">包装费</view>
+                    </view>
+                    <view class="center">
+                        <text>￥{{ parseFloat(store.packing_fee) }}</text>
+                    </view>
+                    <view class="right invisible">
+                        <button type="default" plain size="mini" class="btn" hover-class="none">
+                            <view class="iconfont iconsami-select"></view>
+                        </button>
+                        <view class="number">1</view>
+                        <button type="primary" class="btn" size="min" hover-class="none">
+                            <view class="iconfont iconadd-select"></view>
+                        </button>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

@@ -3,7 +3,8 @@
     "NavSection": "./components/navSection/index",
     "Content": "./components/content/index",
     "ProductModal": "./components/productModal/index",
-    "CartBox": "./components/cartBox/index"
+    "CartBox": "./components/cartBox/index",
+    "CartPopup": "./components/cartPopup/index"
   },
   "navigationBarTitleText": "分类详情"
 }
